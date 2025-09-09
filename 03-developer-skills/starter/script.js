@@ -371,3 +371,106 @@ console.groupEnd();
 
 console.log("Systematic debugging process successfully applied!");
 console.log("All bus identified, isolated, investigated, fixed, and prevented");
+
+//hour 4
+console.log("=== HOUR 4: ADVANCED PROBLEM-SOLVING MASTERY ===");
+
+console.log("Ready to tackle complex problems using systematic approaches");
+console.log("Challenge: Build solutions that work under pressure");
+
+//weather forecast challenge 
+const data1 = [17, 21, 23];
+const data2 = [12, 5, -5, 0, 4];
+
+function printForecaster(arr) {
+
+  let forecastString = "";
+
+  for (let i = 0; i < arr.length; i++) {
+    forecastString += `... ${arr[i]}°C in ${i + 1} days `;
+  }
+
+  console.log("..." + forecastString);
+
+}
+
+printForecaster(data1);
+printForecaster(data2);
+
+console.log("Weather forecast formatter working correctly!");
+
+//time-pressured challenge
+function analyzedWorkWeek(dailyHours) {
+  const totalHours = dailyHours.reduce((sum, hours) => sum + hours, 0);
+  const averageHours = Math.round((totalHours / dailyHours.length) * 10) / 10;
+  const maxHours = Math.max(...dailyHours);
+  const maxDayIndex = dailyHours.indexOf(maxHours);
+  const days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  const maxDay = days[maxDayIndex];
+  const daysworked = dailyHours.filter((hours) => hours > 0).length;
+  const isFullTime= totalHours >= 35;
+
+  return {
+    totalHours,
+    averageHours,
+    maxHours,
+    maxDay,
+    daysworked,
+    isFullTime,
+  };
+}
+
+const weeklyHours = [7.5, 8, 6.5, 0, 8.5, 4, 0];
+const analysis = analyzedWorkWeek(weeklyHours);
+console.log("Work week analysis:", analysis);
+
+console.log("Challenge completed under time pressure!");
+
+//buggy code
+function legacyForecastFunction(temperatures) {
+  let result = "";
+  for (let i = 0; i < temperatures.length; i++) {
+    result = result + temperatures[i] + " degrees in day " + (i + 1) + ", ";
+  }
+  return result;
+}
+
+const testData = [15, 18, 22, 19];
+console.log("Buggy function output:", legacyForecastFunction(testData));
+
+function enhancedForecastFunction(temperatures, options = {}) {
+  if (!Array.isArray(temperatures) || temperatures.length === 0) {
+    console.error("Invalid input: temperatures must be a non-empty array");
+    return "";
+  }
+
+  const { unit = "°C", separator = "...", includeIndex = true} = options;
+
+  let result = "";
+
+  for (let i = 0; i < temperatures.length; i++) {
+    const dayNumber = includeIndex ? i + 1 : i;
+    result += `${temperatures[i]}${unit} in ${dayNumber} days${separator}`;
+  }
+  return separator + result.slice(0, -separator.length);
+}
+
+console.log("Enhanced function (default):", enhancedForecastFunction(testData));
+console.log(
+  "Enhanced function (custom):",
+  enhancedForecastFunction(testData, 
+    { unit: "°F", 
+      separator: " | ", 
+      includeIndex: false })
+);
+
+console.log("Complete developer skills successfully applied!");
+console.log("Legacy code debugged, fixed, and enhanced systematically!");
