@@ -189,7 +189,7 @@ checkBtnEl.addEventListener('click', function() {
     return setMessage (`Number must be between ${MIN_NUMBER} and ${MAX_NUMBER}!`);
  
     if (guess === secretNumber) {
-    setMessage ('You are Correct! 🥳');
+    setMessage ('Congrats! You won 🥳');
     setNumber(secretNumber);
     setBackground('green');
     if (score > highscore) {
@@ -200,13 +200,13 @@ checkBtnEl.addEventListener('click', function() {
     clearInput();
     return;
   }
- 
-  setMessage(guess > secretNumber ? 'Too high!' : 'Too low!');
+
+  setMessage(guess > secretNumber ? 'Too high! 😯' : 'Too low! 👿');
   score--;
   setScore(score);
  
   if (score < 1) {
-    setMessage('You lost!');
+    setMessage('You lost! Game over! 💥');
     setNumber(secretNumber);
     setBackground('maroon');
     disablePlay(true);
