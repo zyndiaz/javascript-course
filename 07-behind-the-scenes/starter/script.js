@@ -81,24 +81,83 @@
 // timer.start();
 // timer.startModern();
 
-const functionTypes = {
-    regularFunction: function () {
-        console.log('Arguments length:', arguments.length);
-        console.log('First argument:', arguments[0]);
-  },
+// const functionTypes = {
+//     regularFunction: function () {
+//         console.log('Arguments length:', arguments.length);
+//         console.log('First argument:', arguments[0]);
+//   },
 
-    arrowFunction: () => {
-        console.log(arguments);
-        console.log('Arrow function called');
-  },
+//     arrowFunction: () => {
+//         console.log(arguments);
+//         console.log('Arrow function called');
+//   },
 
-    modernFunction: (...args) => {
-        console.log('Args length:', args.length);
-        console.log('First arg:', args[0]);
-  },
+//     modernFunction: (...args) => {
+//         console.log('Args length:', args.length);
+//         console.log('First arg:', args[0]);
+//   },
+// };
+
+// functionTypes.regularFunction('hello', 'world');
+// //functionTypes.arrowFunction('test');
+// functionTypes.modernFunction('modern', 'approach');
+
+// hour 3
+
+// let age = 30;
+
+// let oldage = age;
+
+// age = 31;
+// console.log('age:', age);
+// console.log('oldage:', oldage);
+
+// const me = {
+//     name: 'Zyn',
+//     age: 21
+// };
+
+// const friend = me;
+
+// friend.name = 'Drew'; 
+// friend.age = 25;
+
+// console.log('me:', me);
+// console.log('friend:', friend);
+
+// const original = {
+//     name: 'Alice',
+//     age: 28,
+//     hobbies: ['reading', 'coding'],
+// };
+
+// const shallowCopy = { ...original };
+
+// shallowCopy.name = 'Bob';
+
+// console.log('original Name:', original.name);
+// console.log('shallowCopy Name:', shallowCopy.name);
+
+// shallowCopy.hobbies.push('gaming');
+
+// console.log(original.hobbies);
+// console.log(shallowCopy.hobbies);
+
+
+const deepOriginal = {
+    name: 'Charlie',
+    age: 32,
+    //nested object
+    address: {city: 'Paris', country: 'France'},
+    //nested array
+    hobbies: ['traveling', 'photography'],
 };
 
-functionTypes.regularFunction('hello', 'world');
-//functionTypes.arrowFunction('test');
-functionTypes.modernFunction('modern', 'approach');
+const deepCopy = structuredClone(deepOriginal);
 
+deepCopy.address.city = 'London';
+deepCopy.hobbies.push('cooking');
+deepCopy.name = 'Lex';
+
+console.log(deepOriginal);
+console.log(deepCopy);
